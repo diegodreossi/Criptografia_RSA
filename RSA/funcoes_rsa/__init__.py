@@ -44,6 +44,7 @@ def num_primo(msg):
 
 
 def mdc(num1,num2):
+    # Euclides
     while (num2 != 0):
        r = num1 % num2
        num1 = num2
@@ -78,8 +79,11 @@ def criptografar(msg,n,e):
 def descriptografar(msg,n,d):
     msg_desc = "" #Mensagem descriptografada
     for letra in msg:
-        dc = (ord(letra) ** d ) % n 
-        msg_desc += chr(dc)  
+        if letra == " ":
+            msg_desc += " "
+        else:
+            dc = (ord(letra) ** d ) % n 
+            msg_desc += chr(dc)  
 
     return msg_desc
 
